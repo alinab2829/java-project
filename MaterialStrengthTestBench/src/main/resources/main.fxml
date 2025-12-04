@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.layout.HBox?>
+
+<?import javafx.scene.canvas.Canvas?>
+
+<?import javafx.scene.control.Label?>
+
+<?import javafx.scene.control.TitledPane?>
+
+<?import javafx.scene.control.Button?>
+
+<?import javafx.scene.control.Slider?>
+
+<?import javafx.scene.control.TextField?>
+
+<?import javafx.scene.control.ComboBox?>
+
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="app.Controller.MainController"
+            prefWidth="1100" prefHeight="650">
+
+
+    <!-- ЛЕВАЯ КОЛОНКА -->
+    <left>
+        <VBox fx:id="root" spacing="15">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+
+            <!-- Добавить материал -->
+            <TitledPane text="Добавить новый материал" expanded="true">
+                <VBox spacing="10">
+
+                    <Button fx:id="addMaterialBtn"
+                            text="Добавить материал"
+                            style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+                </VBox>
+            </TitledPane>
+
+            <!-- Выбор материала -->
+            <TitledPane text="Выбрать материал" expanded="true">
+                <VBox spacing="10">
+                    <padding>
+                        <Insets top="10" right="10" bottom="10" left="10"/>
+                    </padding>
+                    <ComboBox fx:id="materialBox" prefWidth="200"/>
+                    <Button fx:id="clearMaterialsBtn" text="Очистить материалы"/>
+                </VBox>
+            </TitledPane>
+
+            <!-- Параметры трубы -->
+            <TitledPane text="Параметры трубы" expanded="true">
+                <VBox spacing="10">
+
+                    <Label text="Целевое давление:"/>
+
+                    <HBox spacing="5" alignment="CENTER_LEFT">
+
+                        <Button fx:id="setPressureBtn" text="Введите давление "/>
+                    </HBox>
+
+                </VBox>
+            </TitledPane>
+
+            <!-- Управление испытанием -->
+            <TitledPane text="Управление" expanded="true">
+                <VBox spacing="10">
+                    <padding>
+                        <Insets top="10" right="10" bottom="10" left="10"/>
+                    </padding>
+                    <Button fx:id="startBtn" text="Начать испытание" style="-fx-background-color: #1E88E5; -fx-text-fill: white;"/>
+                    <Button fx:id="resetBtn" text="Сброс" style="-fx-background-color: #1E88E5; -fx-text-fill: white;"/>
+                </VBox>
+            </TitledPane>
+
+        </VBox>
+    </left>
+
+    <!-- ЦЕНТР -->
+    <center>
+        <VBox fx:id="centerPane" spacing="30" alignment="TOP_CENTER">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+            <VBox spacing="5" alignment="CENTER">
+                <Canvas fx:id="manometerCanvas" width="150" height="150"/>
+            </VBox>
+        </VBox>
+    </center>
+
+    <!-- ПРАВАЯ ЧАСТЬ -->
+    <right>
+        <VBox fx:id="rightPanel" spacing="30" alignment="TOP_CENTER">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+        </VBox>
+    </right>
+
+
+</BorderPane>
